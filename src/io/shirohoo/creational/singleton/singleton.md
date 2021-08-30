@@ -120,15 +120,15 @@ public class LazyHolderInitialization {
 <br />
 
 ```java
-public class RandomGenerator {
+public class RandomValueGenerator {
     private final Random random;
 
-    private RandomGenerator(final Random random) {
+    private RandomValueGenerator(final Random random) {
         this.random = random;
     }
 
-    public static RandomGenerator getInstance() {
-        return RandomGeneratorHolder.instance;
+    public static RandomValueGenerator getInstance() {
+        return RandomValueGeneratorHolder.instance;
     }
 
     public int nextInt(final int bound) {
@@ -139,14 +139,16 @@ public class RandomGenerator {
         return random.nextBoolean();
     }
 
-    private static class RandomGeneratorHolder {
-        private static final RandomGenerator instance = new RandomGenerator(new Random());
+    private static class RandomValueGeneratorHolder {
+        private static final RandomValueGenerator instance = new RandomValueGenerator(new Random());
     }
 }
 ```
 
 <br />
 
-이제부터 프로그램에서는 `RandomGenerator.getInstance()`를 통해 `Random`의 인터페이스를 사용할 수 있으면서 메모리도 아낄 수 있게 됩니다.
+이제부터 프로그램에서는 `RandomValueGenerator.getInstance()`를 통해 `Random`의 인터페이스를 사용할 수 있으면서 메모리도 아낄 수 있게 됩니다.
 
-또한 `Random`의 어떤 인터페이스를 외부에 제공할지 또한 개발자의 제어하에 들어옵니다. (`Encapsulation`) 
+그리고 `Random`의 어떤 인터페이스를 외부에 공개할지에 대한 판단 또한 개발자의 제어하에 들어옵니다. (`Encapsulation`) 
+
+<br />
