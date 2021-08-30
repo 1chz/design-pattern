@@ -106,3 +106,47 @@ public class LazyHolderInitialization {
 `정적 내부 클래스`와 `동적바인딩`을 극한으로 활용한 예입니다. 
 
 <br />
+
+# 🛠 실제 사용 예제
+
+<br />
+
+현재 프로그램에서 여러가지 `Random`한 값들을 사용해야 합니다.
+
+하지만 별 생각 없이 필요할 때마다 `new Random`을 매번 호출해서 사용한다면 이는 메모리의 낭비라고 볼 수 있을 것입니다.
+
+따라서 내부적으로 `Random`을 생성하여 갖고 이 `Random`을 통해 외부에 각종 랜덤한 값을 제공하는 유틸리티 싱글턴 객체를 작성해보겠습니다.
+
+<br />
+
+```java
+public class RandomGenerator {
+    private final Random random;
+
+    private RandomGenerator(final Random random) {
+        this.random = random;
+    }
+
+    public static RandomGenerator getInstance() {
+        return RandomGeneratorHolder.instance;
+    }
+
+    public int nextInt(final int bound) {
+        return random.nextInt(bound);
+    }
+
+    public boolean nextBoolean() {
+        return random.nextBoolean();
+    }
+
+    private static class RandomGeneratorHolder {
+        private static final RandomGenerator instance = new RandomGenerator(new Random());
+    }
+}
+```
+
+<br />
+
+이제부터 프로그램에서는 `RandomGenerator.getInstance()`를 통해 `Random`의 인터페이스를 사용할 수 있으면서 메모리도 아낄 수 있게 됩니다.
+
+또한 `Random`의 어떤 인터페이스를 외부에 제공할지 또한 개발자의 제어하에 들어옵니다. (`Encapsulation`) 
