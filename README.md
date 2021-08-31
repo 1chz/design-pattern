@@ -1,6 +1,6 @@
-# 📖 GoF의 23종 디자인 패턴
+# 📖 GoF의 디자인 패턴
 
-![design-patterns](https://user-images.githubusercontent.com/71188307/131283463-70667573-1d1c-4bee-9ba8-d20b3a8b311f.png)
+![design-patterns](https://user-images.githubusercontent.com/71188307/131425407-d131b397-b439-4582-b47f-cf8a70853f34.png)
 
 <br />
 
