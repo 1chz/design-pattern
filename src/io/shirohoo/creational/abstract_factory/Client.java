@@ -12,7 +12,7 @@ import java.io.FileInputStream;
 import java.util.Objects;
 import java.util.Properties;
 
-public class DatabaseClient {
+public class Client {
     private static final String DATABASE = "database";
 
     public static void main(String[] args) throws Exception {
