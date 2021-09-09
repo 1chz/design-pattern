@@ -9,3 +9,6 @@
 - [프로토타입 패턴(Prototype Pattern)](src/io/shirohoo/creational/prototype/prototype.md)
 - [추상 팩토리 패턴(Prototype Pattern)](src/io/shirohoo/creational/abstract_factory/abstract_factory.md)
 - [빌더 패턴(Prototype Pattern)](src/io/shirohoo/creational/builder/builder.md)
+
+# **📦 행위 패턴(Behavioral Pattern)**
+- [템플릿 메서드 패턴(Template Method Pattern)](src/io/shirohoo/behavioral/template_method/template_method.md)
