@@ -7,8 +7,9 @@
 # **📦 생성 패턴(Creational Pattern)**
 - [싱글턴 패턴(Singleton Pattern)](src/io/shirohoo/creational/singleton/singleton.md)
 - [프로토타입 패턴(Prototype Pattern)](src/io/shirohoo/creational/prototype/prototype.md)
-- [추상 팩토리 패턴(Prototype Pattern)](src/io/shirohoo/creational/abstract_factory/abstract_factory.md)
-- [빌더 패턴(Prototype Pattern)](src/io/shirohoo/creational/builder/builder.md)
+- [빌더 패턴(Builder Pattern)](src/io/shirohoo/creational/builder/builder.md)
+- [추상 팩토리 패턴(Abstract Factory Pattern)](src/io/shirohoo/creational/abstract_factory/abstract_factory.md)
+- [팩토리 메서드 패턴(Factory Method Pattern)](src/io/shirohoo/creational/factory_method/factory_method.md)
 
 # **📦 행위 패턴(Behavioral Pattern)**
 - [템플릿 메서드 패턴(Template Method Pattern)](src/io/shirohoo/behavioral/template_method/template_method.md)
