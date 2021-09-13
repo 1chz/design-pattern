@@ -11,6 +11,9 @@
 - [추상 팩토리 패턴(Abstract Factory Pattern)](src/io/shirohoo/creational/abstract_factory/abstract_factory.md)
 - [팩토리 메서드 패턴(Factory Method Pattern)](src/io/shirohoo/creational/factory_method/factory_method.md)
 
+# **📦 구조 패턴(Structural Pattern)**
+- [프록시 패턴(Proxy Pattern)](src/io/shirohoo/structural/proxy/proxy.md)
+
 # **📦 행위 패턴(Behavioral Pattern)**
 - [템플릿 메서드 패턴(Template Method Pattern)](src/io/shirohoo/behavioral/template_method/template_method.md)
 - [전략 패턴(Strategy Pattern)](src/io/shirohoo/behavioral/strategy/strategy.md)
