@@ -13,3 +13,4 @@
 
 # **📦 행위 패턴(Behavioral Pattern)**
 - [템플릿 메서드 패턴(Template Method Pattern)](src/io/shirohoo/behavioral/template_method/template_method.md)
+- [전략 패턴(Strategy Pattern)](src/io/shirohoo/behavioral/strategy/strategy.md)
