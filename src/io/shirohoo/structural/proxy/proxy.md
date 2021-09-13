@@ -204,8 +204,8 @@ public interface TextFileReader {
 public class RealTextFileReader implements TextFileReader {
     private final String plainText;
 
-    public RealTextFileReader(final String plainText) {
-        this.plainText = SecretUtil.decode(plainText);
+    public RealTextFileReader(final String encryptedText) {
+        this.plainText = SecretUtil.decode(encryptedText);
     }
 
     @Override
@@ -257,8 +257,8 @@ public class ProxyTextFileReader implements TextFileReader {
     private String plainText;
     private SecretText secretText;
 
-    public ProxyTextFileReader(final String plainText) {
-        this.plainText = SecretUtil.decode(plainText);
+    public ProxyTextFileReader(final String encryptedText) {
+        this.plainText = SecretUtil.decode(encryptedText);
     }
 
     @Override
@@ -333,8 +333,8 @@ public class LazyTextFileReader implements TextFileReader {
     private String plainText;
     private TextFileReader reader;
 
-    public LazyTextFileReader(String plainText) {
-        this.plainText = plainText;
+    public LazyTextFileReader(final String encryptedText) {
+        this.plainText = SecretUtil.decode(encryptedText);
     }
 
     @Override

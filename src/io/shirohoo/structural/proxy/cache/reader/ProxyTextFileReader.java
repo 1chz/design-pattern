@@ -11,8 +11,8 @@ public class ProxyTextFileReader implements TextFileReader {
     private String plainText;
     private SecretText secretText;
 
-    public ProxyTextFileReader(final String plainText) {
-        this.plainText = SecretUtil.decode(plainText);
+    public ProxyTextFileReader(final String encryptedText) {
+        this.plainText = SecretUtil.decode(encryptedText);
     }
 
     @Override

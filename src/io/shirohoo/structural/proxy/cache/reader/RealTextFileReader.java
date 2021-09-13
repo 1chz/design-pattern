@@ -6,8 +6,8 @@ import io.shirohoo.structural.proxy.cache.util.SecretUtil;
 public class RealTextFileReader implements TextFileReader {
     private final String plainText;
 
-    public RealTextFileReader(final String plainText) {
-        this.plainText = SecretUtil.decode(plainText);
+    public RealTextFileReader(final String encryptedText) {
+        this.plainText = SecretUtil.decode(encryptedText);
     }
 
     @Override
