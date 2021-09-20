@@ -3,6 +3,7 @@ package io.shirohoo.creational.factory_method;
 import io.shirohoo.creational.factory_method.connector.DBConnector;
 
 public class ConsoleRunner {
+
     public static void main(String[] args) {
         System.out.println("======== MySQL ========");
         DBConnector mySQLConnector = DBConnectors.createMySQLConnector();
@@ -12,4 +13,5 @@ public class ConsoleRunner {
         DBConnector oracleConnector = DBConnectors.createOracleConnector();
         oracleConnector.connect();
     }
+
 }

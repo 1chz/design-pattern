@@ -1,7 +1,8 @@
 package io.shirohoo.behavioral.template_method;
 
 public class DatabaseConnection {
-    private String connection;
+
+    private final String connection;
 
     private DatabaseConnection(final String driver) {
         this.connection = driver;
@@ -15,4 +16,5 @@ public class DatabaseConnection {
     public String toString() {
         return connection;
     }
+
 }

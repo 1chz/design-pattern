@@ -18,10 +18,12 @@
 
 ```java
 public interface Electronic220V {
+
     void on();
+
 }
 
-public class AirConditioner implements Electronic220V{
+public class AirConditioner implements Electronic220V {
 
     @Override
     public void on() {
@@ -35,7 +37,9 @@ public class AirConditioner implements Electronic220V{
 
 ```java
 public interface Electronic110V {
+
     void on();
+
 }
 
 public class HairDryer implements Electronic110V {
@@ -93,7 +97,7 @@ public class ConsoleRunner {
 ```java
 public class Adapter implements Electronic110V {
 
-    private Electronic220V electronic220V;
+    private final Electronic220V electronic220V;
 
     private Adapter(final Electronic220V electronic220V) {
         this.electronic220V = electronic220V;
@@ -158,7 +162,7 @@ public class ConsoleRunner {
 <br />
 
 ```java
-BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 ```
 
 <br />
@@ -168,9 +172,9 @@ BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 <br />
 
 ```java
-public BufferedReader(Reader in) {
-    this(in, defaultCharBufferSize);
-}
+public BufferedReader(Reader in){
+    this(in,defaultCharBufferSize);
+    }
 ```
 
 <br />
@@ -180,7 +184,7 @@ public BufferedReader(Reader in) {
 <br />
 
 ```java
-public final static InputStream in = null;
+public final static InputStream in=null;
 ```
 
 <br />

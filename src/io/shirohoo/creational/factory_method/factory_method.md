@@ -45,10 +45,10 @@ private final static Logger LOG = LoggerFactory.getLogger(SomeClass.class);
 저는 위 명제에 대해 다음과 같은 이점을 얻을 수 있지 않나 생각해봅니다.
 
 - 객체 생성을 위해 알고있어야 할 API가 대폭 좁혀지거나 한가지로 통일된다.
-   - 예를 들어 A클래스와 B클래스의 인스턴스를 생성하기 위해 각자의 클래스의 생성자를 직접 호출해야 한다면, 개발자는 두 클래스의 이름을 모두 알아야 합니다.
-   - 이러한 클래스가 수십개가 넘어간다면 수십개 클래스의 이름을 모두 알고 있어야 합니다.
-   - 만약 수십개 클래스의 인스턴스를 모두 하나의 클래스에서 생성해낼 수 있다면, 수십개 클래스의 인스턴스를 생성해주는 팩토리 클래스의 이름만 알고 있으면 됩니다.
-   
+    - 예를 들어 A클래스와 B클래스의 인스턴스를 생성하기 위해 각자의 클래스의 생성자를 직접 호출해야 한다면, 개발자는 두 클래스의 이름을 모두 알아야 합니다.
+    - 이러한 클래스가 수십개가 넘어간다면 수십개 클래스의 이름을 모두 알고 있어야 합니다.
+    - 만약 수십개 클래스의 인스턴스를 모두 하나의 클래스에서 생성해낼 수 있다면, 수십개 클래스의 인스턴스를 생성해주는 팩토리 클래스의 이름만 알고 있으면 됩니다.
+
 <br />
 
 ## 🛠 구현
@@ -59,7 +59,7 @@ private final static Logger LOG = LoggerFactory.getLogger(SomeClass.class);
 
 이 핵심만 잘 이해한다면 언제 어떤상황에서라도 자신만의 방식으로 응용하여 적용할 수 있지 않을까요?
 
-저는 모든 디자인패턴에 대해 이 생각을 가지고 학습하고 있습니다. 😁 
+저는 모든 디자인패턴에 대해 이 생각을 가지고 학습하고 있습니다. 😁
 
 그래서 저만의 방식으로 간단하게 구현을 해봤습니다.
 
@@ -67,7 +67,7 @@ private final static Logger LOG = LoggerFactory.getLogger(SomeClass.class);
 
 여러 종류의 DB 벤더가 있고, 각 DB에 접속할 수 있는 커넥터를 만들고 싶다고 가정해봅시다.
 
-그리고 모든 DB 커넥터들을 단 하나의 팩토리에서 생성해줄 수 있다면, 개발자는 이 팩토리 객체의 이름만 알면 됩니다. 
+그리고 모든 DB 커넥터들을 단 하나의 팩토리에서 생성해줄 수 있다면, 개발자는 이 팩토리 객체의 이름만 알면 됩니다.
 
 <br  />
 
@@ -75,21 +75,27 @@ private final static Logger LOG = LoggerFactory.getLogger(SomeClass.class);
 
 ```java
 public interface DBConnector {
+
     void connect();
+
 }
 
-public class MySQLConnector implements DBConnector{
+public class MySQLConnector implements DBConnector {
+
     @Override
     public void connect() {
         System.out.println("connect MySQL");
     }
+
 }
 
-public class OracleConnector implements DBConnector{
+public class OracleConnector implements DBConnector {
+
     @Override
     public void connect() {
         System.out.println("connect Oracle");
     }
+
 }
 ```
 
@@ -115,6 +121,7 @@ public final class DBConnectors {
 
 ```java
 public class ConsoleRunner {
+
     public static void main(String[] args) {
         System.out.println("======== MySQL ========");
         DBConnector mySQLConnector = DBConnectors.createMySQLConnector();
@@ -124,6 +131,7 @@ public class ConsoleRunner {
         DBConnector oracleConnector = DBConnectors.createOracleConnector();
         oracleConnector.connect();
     }
+
 }
 ```
 

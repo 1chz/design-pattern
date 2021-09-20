@@ -1,6 +1,7 @@
 package io.shirohoo.creational.builder;
 
 public class Member {
+
     private final String firstName;
     private final String middleName;
     private final String lastName;
@@ -20,13 +21,15 @@ public class Member {
     }
 
     public static class MemberBuilder {
+
         private String firstName;
         private String middleName;
         private String lastName;
         private int age;
         private String country;
 
-        private MemberBuilder() {}
+        private MemberBuilder() {
+        }
 
         public MemberBuilder firstName(final String firstName) {
             this.firstName = firstName;
@@ -56,5 +59,7 @@ public class Member {
         public Member build() {
             return new Member(this.firstName, this.middleName, this.lastName, this.age, this.country);
         }
+
     }
+
 }

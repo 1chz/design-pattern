@@ -3,6 +3,7 @@ package io.shirohoo.creational.abstract_factory.domain.model;
 import java.util.Objects;
 
 public class Lecture {
+
     private final Long id;
     private final String teacherName;
     private final String title;
@@ -23,8 +24,12 @@ public class Lecture {
 
     @Override
     public boolean equals(final Object o) {
-        if (this == o) {return true;}
-        if (o == null || getClass() != o.getClass()) {return false;}
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         final Lecture lecture = (Lecture) o;
         return Objects.equals(id, lecture.id);
     }
@@ -37,9 +42,10 @@ public class Lecture {
     @Override
     public String toString() {
         return "Lecture{" +
-                "id=" + id +
-                ", teacherName='" + teacherName + '\'' +
-                ", title='" + title + '\'' +
-                '}';
+            "id=" + id +
+            ", teacherName='" + teacherName + '\'' +
+            ", title='" + title + '\'' +
+            '}';
     }
+
 }

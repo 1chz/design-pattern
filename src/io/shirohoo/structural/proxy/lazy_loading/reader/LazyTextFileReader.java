@@ -1,14 +1,14 @@
 package io.shirohoo.structural.proxy.lazy_loading.reader;
 
+import static java.util.Objects.isNull;
 import io.shirohoo.structural.proxy.cache.model.SecretText;
 import io.shirohoo.structural.proxy.cache.reader.RealTextFileReader;
 import io.shirohoo.structural.proxy.cache.reader.TextFileReader;
 import io.shirohoo.structural.proxy.cache.util.SecretUtil;
 
-import static java.util.Objects.isNull;
-
 public class LazyTextFileReader implements TextFileReader {
-    private String plainText;
+
+    private final String plainText;
     private TextFileReader reader;
 
     public LazyTextFileReader(final String encryptedText) {
@@ -23,4 +23,5 @@ public class LazyTextFileReader implements TextFileReader {
         System.out.println("lazy initialisation");
         return reader.read();
     }
+
 }

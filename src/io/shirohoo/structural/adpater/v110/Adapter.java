@@ -4,7 +4,7 @@ import io.shirohoo.structural.adpater.v220.Electronic220V;
 
 public class Adapter implements Electronic110V {
 
-    private Electronic220V electronic220V;
+    private final Electronic220V electronic220V;
 
     private Adapter(final Electronic220V electronic220V) {
         this.electronic220V = electronic220V;

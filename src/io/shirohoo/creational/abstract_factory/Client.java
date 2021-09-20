@@ -13,6 +13,7 @@ import java.util.Objects;
 import java.util.Properties;
 
 public class Client {
+
     private static final String DATABASE = "database";
 
     public static void main(String[] args) throws Exception {
@@ -65,4 +66,5 @@ public class Client {
         memberRepository.update(member);
         memberRepository.delete(member);
     }
+
 }

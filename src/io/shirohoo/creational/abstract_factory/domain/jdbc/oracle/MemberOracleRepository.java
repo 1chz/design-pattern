@@ -4,6 +4,7 @@ import io.shirohoo.creational.abstract_factory.domain.jdbc.MemberRepository;
 import io.shirohoo.creational.abstract_factory.domain.model.Member;
 
 public class MemberOracleRepository implements MemberRepository {
+
     @Override
     public void insert(final Member member) {
         System.out.println("Oracle :: insert :: " + member);
@@ -23,4 +24,5 @@ public class MemberOracleRepository implements MemberRepository {
     public void delete(final Member member) {
         System.out.println("Oracle :: delete :: " + member);
     }
+
 }

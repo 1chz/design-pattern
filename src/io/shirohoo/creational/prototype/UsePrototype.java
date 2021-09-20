@@ -3,6 +3,7 @@ package io.shirohoo.creational.prototype;
 import java.util.Objects;
 
 public class UsePrototype {
+
     public static void main(String[] args) {
         // 책장에는 책이 여러개 꼽혀있을 수 있습니다.
         // 따라서 책장과 책은 일대다 관계를 가지며, 이를 컬렉션으로 표현합니다.
@@ -27,4 +28,5 @@ public class UsePrototype {
         // 성공적으로 깊은복사가 수행되어 아래의 단정문이 참이 됩니다.
         assert !Objects.equals(원본_토비_토비의_스프링2, 복제본_토비_토비의_스프링);
     }
+
 }

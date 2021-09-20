@@ -3,6 +3,7 @@ package io.shirohoo.creational.prototype;
 import java.util.Objects;
 
 public class NotUsePrototype {
+
     public static void main(String[] args) {
         // 책장에는 책이 여러개 꼽혀있을 수 있습니다.
         // 따라서 책장과 책은 일대다 관계를 가지며, 이를 컬렉션으로 표현합니다.
@@ -32,4 +33,5 @@ public class NotUsePrototype {
         // 따라서 아래의 단정문은 부자연스럽지만 참이 됩니다.
         assert Objects.equals(원본_조영호_객체지향의_사실과_오해, 복제본_조영호_오브젝트);
     }
+
 }

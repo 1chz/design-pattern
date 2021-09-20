@@ -2,7 +2,7 @@
 
 <br />
 
-`행위 패턴`에 속하는 `전략 패턴`입니다. 
+`행위 패턴`에 속하는 `전략 패턴`입니다.
 
 누군가는 `정책 패턴`이라고도 부르기도 합니다만, 대체적으로 전략 패턴이라는 이름으로 더 잘 알려져있습니다.
 
@@ -46,21 +46,27 @@
 
 ```java
 public interface DBConnector {
+
     void connect();
+
 }
 
-public final class MySQLConnector implements DBConnector{
+public final class MySQLConnector implements DBConnector {
+
     @Override
     public void connect() {
         System.out.println("connect MySQL");
     }
+
 }
 
-public final class OracleConnector implements DBConnector{
+public final class OracleConnector implements DBConnector {
+
     @Override
     public void connect() {
         System.out.println("connect Oracle");
     }
+
 }
 ```
 
@@ -87,6 +93,7 @@ public enum DBType {
 }
 
 public class Client {
+
     private DBConnector dbConnector;
 
     private Client(final DBConnector dbConnector) {
@@ -105,6 +112,7 @@ public class Client {
         Objects.requireNonNull(dbConnector, "DBConnector must not ne null !");
         this.dbConnector = dbConnector;
     }
+
 }
 ```
 
@@ -120,6 +128,7 @@ public class Client {
 
 ```java
 public class ConsoleRunner {
+
     public static void main(String[] args) {
         Client client = Client.from(ORACLE.createConnector());
         client.connect();
@@ -128,6 +137,7 @@ public class ConsoleRunner {
         client.changeDBConnector(MYSQL.createConnector());
         client.connect();
     }
+
 }
 ```
 

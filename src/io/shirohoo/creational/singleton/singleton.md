@@ -28,7 +28,7 @@
 
 <br />
 
-# ⚙ 이른 초기화(Eager Initialization)
+# ⚙ Eager Initialization
 
 <br />
 
@@ -52,7 +52,7 @@ public class EagerInitialization {
 
 <br />
 
-# ⚙ 게으른 초기화(Synchronized Lazy Initialization)
+# ⚙ Synchronized Lazy Initialization
 
 <br />
 
@@ -81,7 +81,7 @@ public class SyncLazyInitialization {
 
 <br />
 
-# ⚙ 게으른 홀더(Lazy Holder)
+# ⚙ Lazy Holder
 
 <br />
 
@@ -103,9 +103,9 @@ public class LazyHolderInitialization {
 
 `synchronized`같은 구문을 사용하지 않더라도 동시성 문제를 해결 할 수 있습니다.
 
-동시에 `지연로딩`까지 가능하기 때문에 가장 권장되는 싱글턴 패턴 구현 방법입니다. 
+동시에 `지연로딩`까지 가능하기 때문에 가장 권장되는 싱글턴 패턴 구현 방법입니다.
 
-`정적 내부 클래스`와 `동적바인딩`을 극한으로 활용한 예입니다. 
+`정적 내부 클래스`와 `동적바인딩`을 극한으로 활용한 예입니다.
 
 <br />
 
@@ -151,6 +151,6 @@ public class RandomValueGenerator {
 
 이제부터 프로그램에서는 `RandomValueGenerator.getInstance()`를 통해 `Random`의 인터페이스를 사용할 수 있으면서 메모리도 아낄 수 있게 됩니다.
 
-그리고 `Random`의 어떤 인터페이스를 외부에 공개할지에 대한 판단 또한 개발자의 제어하에 들어옵니다. (`Encapsulation`) 
+그리고 `Random`의 어떤 인터페이스를 외부에 공개할지에 대한 판단 또한 개발자의 제어하에 들어옵니다. (`Encapsulation`)
 
 <br />

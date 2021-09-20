@@ -4,6 +4,7 @@ import io.shirohoo.behavioral.strategy.connector.DBConnector;
 import java.util.Objects;
 
 public class Client {
+
     private DBConnector dbConnector;
 
     private Client(final DBConnector dbConnector) {
@@ -22,4 +23,5 @@ public class Client {
         Objects.requireNonNull(dbConnector, "DBConnector must not ne null !");
         this.dbConnector = dbConnector;
     }
+
 }

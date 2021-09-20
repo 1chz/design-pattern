@@ -4,6 +4,7 @@ import io.shirohoo.creational.abstract_factory.domain.jdbc.LectureRepository;
 import io.shirohoo.creational.abstract_factory.domain.model.Lecture;
 
 public class LectureOracleRepository implements LectureRepository {
+
     @Override
     public void insert(final Lecture lecture) {
         System.out.println("Oracle :: insert :: " + lecture);
@@ -23,4 +24,5 @@ public class LectureOracleRepository implements LectureRepository {
     public void delete(final Lecture lecture) {
         System.out.println("Oracle :: delete :: " + lecture);
     }
+
 }

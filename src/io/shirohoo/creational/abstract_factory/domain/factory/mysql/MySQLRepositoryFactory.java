@@ -7,6 +7,7 @@ import io.shirohoo.creational.abstract_factory.domain.jdbc.mysql.LectureMySQLRep
 import io.shirohoo.creational.abstract_factory.domain.jdbc.mysql.MemberMySQLRepository;
 
 public class MySQLRepositoryFactory implements RepositoryFactory {
+
     @Override
     public MemberRepository createMemberRepository() {
         return new MemberMySQLRepository();
@@ -16,4 +17,5 @@ public class MySQLRepositoryFactory implements RepositoryFactory {
     public LectureRepository createLectureRepository() {
         return new LectureMySQLRepository();
     }
+
 }

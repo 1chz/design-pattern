@@ -20,7 +20,7 @@
 
 단점으로는 흔히 [보일러 플레이트 코드](https://ko.wikipedia.org/wiki/%EC%83%81%EC%9A%A9%EA%B5%AC_%EC%BD%94%EB%93%9C) 라고 불리는 것이 대량으로 생긴다는 점입니다.
 
-하지만 자바에서는 이 귀찮은 작업을 롬복이 대신 처리 해 줍니다. 
+하지만 자바에서는 이 귀찮은 작업을 롬복이 대신 처리 해 줍니다.
 
 만약 빌더 패턴을 사용할 때마다 직접 코드를 작성해야 한다면, 정말 귀찮고 지루한 작업이 되지 않을까 싶네요.
 
@@ -94,7 +94,7 @@ public static Member whenRegistering(final String firstName, final String middle
 ```       
 
 <br />
-        
+
 ```java
 Member.whenRegistering("f", "m", "l", 5, "ko");
 ```

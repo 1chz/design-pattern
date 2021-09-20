@@ -5,6 +5,7 @@ import io.shirohoo.structural.proxy.cache.reader.RealTextFileReader;
 import io.shirohoo.structural.proxy.cache.reader.TextFileReader;
 
 public class ConsoleRunner {
+
     public static void main(String[] args) {
         // 캐시하지 않음
         final TextFileReader realTextFileReader = new RealTextFileReader("plainText");
@@ -24,4 +25,5 @@ public class ConsoleRunner {
         proxyTextFileReader.read();
         proxyTextFileReader.read();
     }
+
 }

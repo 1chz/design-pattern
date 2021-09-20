@@ -1,6 +1,6 @@
 package io.shirohoo.structural.adpater.v220;
 
-public class AirConditioner implements Electronic220V{
+public class AirConditioner implements Electronic220V {
 
     @Override
     public void on() {

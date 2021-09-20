@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookShelf {
+
     private final List<Book> shelf;
 
     private BookShelf() {
@@ -34,8 +35,9 @@ public class BookShelf {
     // 프로토타입 패턴
     public BookShelf deepClone() {
         return new BookShelf(shelf.stream()
-                .map(Book::deepClone)
-                .collect(Collectors.toUnmodifiableList())
+            .map(Book::deepClone)
+            .collect(Collectors.toUnmodifiableList())
         );
     }
+
 }

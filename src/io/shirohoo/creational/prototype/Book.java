@@ -3,7 +3,8 @@ package io.shirohoo.creational.prototype;
 import java.util.Objects;
 
 public class Book {
-    private String author;
+
+    private final String author;
     private String title;
 
     private Book(final String author, final String title) {
@@ -30,8 +31,12 @@ public class Book {
 
     @Override
     public boolean equals(final Object o) {
-        if (this == o) {return true;}
-        if (o == null || getClass() != o.getClass()) {return false;}
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         final Book book = (Book) o;
         return Objects.equals(author, book.author) && Objects.equals(title, book.title);
     }
@@ -40,4 +45,5 @@ public class Book {
     public int hashCode() {
         return Objects.hash(author, title);
     }
+
 }

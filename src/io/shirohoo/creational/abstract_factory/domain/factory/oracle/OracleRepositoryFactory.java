@@ -7,6 +7,7 @@ import io.shirohoo.creational.abstract_factory.domain.jdbc.oracle.LectureOracleR
 import io.shirohoo.creational.abstract_factory.domain.jdbc.oracle.MemberOracleRepository;
 
 public class OracleRepositoryFactory implements RepositoryFactory {
+
     @Override
     public MemberRepository createMemberRepository() {
         return new MemberOracleRepository();
@@ -16,4 +17,5 @@ public class OracleRepositoryFactory implements RepositoryFactory {
     public LectureRepository createLectureRepository() {
         return new LectureOracleRepository();
     }
+
 }

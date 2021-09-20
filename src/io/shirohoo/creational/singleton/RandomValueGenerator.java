@@ -3,6 +3,7 @@ package io.shirohoo.creational.singleton;
 import java.util.Random;
 
 public class RandomValueGenerator {
+
     private final Random random;
 
     private RandomValueGenerator(final Random random) {
@@ -22,6 +23,9 @@ public class RandomValueGenerator {
     }
 
     private static class RandomValueGeneratorHolder {
+
         private static final RandomValueGenerator instance = new RandomValueGenerator(new Random());
+
     }
+
 }

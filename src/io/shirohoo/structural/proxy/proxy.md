@@ -10,7 +10,7 @@
 
 몇가지 예를 들어보자면 JPA의 지연로딩, ASM과 ASM을 사용하는 ByteBuddy, 각종 캐시관련 라이브러리 등이 있겠습니다.
 
-자바에도 프록시 패턴을 쉽게 사용할 수 있게 이미 `java.lang.reflect.Proxy`라는 클래스를 만들어두었습니다. 
+자바에도 프록시 패턴을 쉽게 사용할 수 있게 이미 `java.lang.reflect.Proxy`라는 클래스를 만들어두었습니다.
 
 아무튼 프록시는 실제로 굉장히 유용하게 사용되고 있는 패턴이며, 대부분의 라이브러리에서 핵심적인 역할을 담당하고 있으니, 이에 대한 이해가 제대로 수반되어야 할 것입니다.
 
@@ -67,7 +67,7 @@
 
 ```java
 public class Client {
-    private Operator operator;
+    private final Operator operator;
 
     public Client(final Operator operator) {
         this.operator = operator;
@@ -258,7 +258,7 @@ reading text from : plainText
 
 ```java
 public class ProxyTextFileReader implements TextFileReader {
-    private String plainText;
+    private final String plainText;
     private SecretText secretText;
 
     public ProxyTextFileReader(final String encryptedText) {
@@ -334,7 +334,8 @@ using cached text.
 
 ```java
 public class LazyTextFileReader implements TextFileReader {
-    private String plainText;
+
+    private final String plainText;
     private TextFileReader reader;
 
     public LazyTextFileReader(final String encryptedText) {
@@ -349,6 +350,7 @@ public class LazyTextFileReader implements TextFileReader {
         System.out.println("lazy initialisation");
         return reader.read();
     }
+
 }
 ```
 
