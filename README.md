@@ -13,6 +13,7 @@
 
 # **📦 구조 패턴(Structural Pattern)**
 - [프록시 패턴(Proxy Pattern)](src/io/shirohoo/structural/proxy/proxy.md)
+- [어댑터 패턴(Adapter Pattern)](src/io/shirohoo/structural/adpater/adapter.md)
 
 # **📦 행위 패턴(Behavioral Pattern)**
 - [템플릿 메서드 패턴(Template Method Pattern)](src/io/shirohoo/behavioral/template_method/template_method.md)
