@@ -162,7 +162,7 @@ public class ConsoleRunner {
 <br />
 
 ```java
-BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 ```
 
 <br />
