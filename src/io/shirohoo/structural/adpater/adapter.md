@@ -174,7 +174,7 @@ BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 ```java
 public BufferedReader(Reader in){
     this(in,defaultCharBufferSize);
-    }
+}
 ```
 
 <br />
@@ -184,7 +184,7 @@ public BufferedReader(Reader in){
 <br />
 
 ```java
-public final static InputStream in=null;
+public final static InputStream in = null;
 ```
 
 <br />
