@@ -84,6 +84,10 @@ public class Watcher {
 
 <br />
 
+이어서 판치기하는 친구들을 구현합니다.
+
+<br />
+
 ```java
 public interface Friends {
     // 친구들은 판치기를 하면서도 망보는 친구가 해주는 얘기에 귀를 기울이고 있습니다 !
