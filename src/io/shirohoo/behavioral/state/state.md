@@ -24,3 +24,105 @@
 
 컴퓨터의 전원이 켜져있는지, 꺼져있는지에 따라 다른 동작을 하게끔 하고 싶다고 가정하겠습니다.
 
+먼저 컴퓨터의 상태를 작성합니다. 
+
+<br />
+
+```java
+public interface PowerState {
+
+    void powerOperate();
+
+}
+
+public class PowerOn implements PowerState {
+
+    @Override
+    public void powerOperate() {
+        System.out.println("Power off.");
+    }
+
+}
+
+public class PowerOff implements PowerState {
+
+    @Override
+    public void powerOperate() {
+        System.out.println("Power on.");
+    }
+
+}
+```
+
+<br />
+
+그리고 구현한 상태를 사용하는 컴퓨터를 작성합니다.
+
+<br />
+
+```java
+public class Computer {
+
+    private PowerState powerState;
+
+    private Computer(final PowerState powerState) {
+        this.powerState = powerState;
+    }
+
+
+    public static Computer from(final PowerState powerState) {
+        return new Computer(powerState);
+    }
+
+    public void changePowerState(final PowerState powerState) {
+        this.powerState = powerState;
+    }
+
+    public void powerOperate() {
+        powerState.powerOperate();
+    }
+
+}
+```
+
+<br />
+
+작성한 컴퓨터를 사용해보면...
+
+<br />
+
+```java
+public class ConsoleRunner {
+
+    public static void main(String[] args) {
+        // 컴퓨터가 꺼진 상태로 초기화
+        Computer computer = Computer.from(new PowerOff());
+
+        computer.powerOperate(); // Power on. 출력
+        computer.changePowerState(new PowerOn()); // 컴퓨터가 켜진 상태로 변경
+
+        computer.powerOperate(); // Power off. 출력
+        computer.changePowerState(new PowerOff()); // 컴퓨터가 꺼진 상태로 변경
+    }
+
+}
+```
+
+<br />
+
+```shell
+Power on.
+Power off.
+```
+
+<br />
+
+컴퓨터의 전원 상태에 절전모드 등이 추가되더라도, 절전모드를 표현하는 클래스만 하나 추가하면 매끄러운 확장이 가능해집니다.
+
+또한, 각 상태가 클래스로 분리되어있기 때문에, 특정 상태만 변경하고자 하면 해당 상태를 표현하는 클래스만 집중적으로 살펴보면 되게 됩니다.
+
+이렇게 상태 패턴은 조건문을 획기적으로 줄이면서도 유지보수하기 좋은 코드를 만들 수 있게 해줍니다.
+
+전략 패턴과 아주 유사한데, 전략 패턴은 상속을 줄이기 위한 목적으로 사용되고, 상태 패턴은 조건문을 줄이기 위한 목적으로 사용됩니다.
+
+<br />
