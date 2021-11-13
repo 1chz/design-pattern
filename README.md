@@ -24,5 +24,6 @@
 - [템플릿 메서드 패턴(Template Method Pattern)](src/io/shirohoo/behavioral/template_method/template_method.md)
 - [전략 패턴(Strategy Pattern)](src/io/shirohoo/behavioral/strategy/strategy.md)
 - [옵저버 패턴(Observer Pattern)](src/io/shirohoo/behavioral/observer/observer.md)
+- [커맨드 패턴(Command Pattern)](src/io/shirohoo/behavioral/command/command.md)
 
 <br />
