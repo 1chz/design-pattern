@@ -1,17 +1,16 @@
 package io.shirohoo.behavioral.observer;
 
 public class ConsoleRunner {
-
     public static void main(String[] args) {
-        final Watcher publisher = new Watcher(
-            event -> System.out.println(String.format("망보는 친구: 복도에 %s 선생님 출현 !", event))
-        );
+        LookOut lookOut = new LookOut();
+        lookOut.registerObserver(new Jjanggu());
+        lookOut.registerObserver(new Chulsoo());
+        lookOut.registerObserver(new Younghee());
 
-        publisher.publish("홍길동");
-        publisher.publish("이순신");
-        publisher.publish("유관순");
+        System.out.println("망보는 친구: 복도에 선생님 출현하지 않음 !");
+        lookOut.notifyObservers(false);
 
-        System.out.println("친구들은 판을 정리하고 자리에 앉았다 !");
+        System.out.println("망보는 친구: 복도에 선생님 출현 !");
+        lookOut.notifyObservers(true);
     }
-
 }
