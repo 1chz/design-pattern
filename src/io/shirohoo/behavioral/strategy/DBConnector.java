@@ -1,7 +1,5 @@
-package io.shirohoo.behavioral.strategy.connector;
+package io.shirohoo.behavioral.strategy;
 
 public interface DBConnector {
-
     void connect();
-
 }

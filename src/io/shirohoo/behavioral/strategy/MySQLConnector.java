@@ -1,10 +1,8 @@
-package io.shirohoo.behavioral.strategy.connector;
+package io.shirohoo.behavioral.strategy;
 
 public final class MySQLConnector implements DBConnector {
-
     @Override
     public void connect() {
-        System.out.println("connect MySQL");
+        System.out.println("connected to MySQL");
     }
-
 }

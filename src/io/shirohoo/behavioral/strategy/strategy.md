@@ -52,14 +52,14 @@ public interface DBConnector {
 public final class MySQLConnector implements DBConnector {
     @Override
     public void connect() {
-        System.out.println("connect to MySQL");
+        System.out.println("connected to MySQL");
     }
 }
 
 public final class OracleConnector implements DBConnector {
     @Override
     public void connect() {
-        System.out.println("connect to Oracle");
+        System.out.println("connected to Oracle");
     }
 }
 ```
@@ -72,8 +72,8 @@ public final class OracleConnector implements DBConnector {
 
 ```java
 public enum Databases {
-    MYSQL(() -> new MySQLConnector()),
-    ORACLE(() -> new OracleConnector());
+    MYSQL(MySQLConnector::new),
+    ORACLE(OracleConnector::new);
 
     private final Supplier<DBConnector> supplier;
 
@@ -86,7 +86,7 @@ public enum Databases {
     }
 }
 
-public class Connector {
+public final class Connector {
     private final DBConnector dbConnector;
 
     private Connector(DBConnector dbConnector) {
@@ -94,7 +94,7 @@ public class Connector {
     }
 
     public static Connector from(Databases databases) {
-        return new Client(databases.createConnector());
+        return new Connector(databases.createConnector());
     }
 
     public void connect() {
@@ -114,12 +114,12 @@ public class Connector {
 <br />
 
 ```java
-public class ConsoleRunner {
+public class Runner {
     public static void main(String[] args) {
-        Connector mysql = Client.from(Databases.MYSQL);
+        Connector mysql = Connector.from(Databases.MYSQL);
         mysql.connect();
-        
-        Connector oracle = Client.from(Databases.ORACLE);
+
+        Connector oracle = Connector.from(Databases.ORACLE);
         oracle.connect();
     }
 }
@@ -132,8 +132,8 @@ public class ConsoleRunner {
 <br />
 
 ```shell
-connect to Oracle
-connect to MySQL
+connected to Oracle
+connected to MySQL
 ```
 
 <br />
