@@ -128,8 +128,8 @@ public class Runner {
 <br />
 
 ```shell
-connected to Oracle
 connected to MySQL
+connected to Oracle
 ```
 
 <br />
