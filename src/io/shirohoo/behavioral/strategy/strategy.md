@@ -105,14 +105,6 @@ public final class Connector {
 
 <br />
 
-처음 `Client` 객체를 생성할 때 오라클 인스턴스를 주입받아 생성하고, 이후 커넥터를 MySQL 인스턴스로 변경해줍니다.
-
-변경은 별도의 교체용 메서드를 호출함으로써 쉽게 끝납니다.
-
-이러한 변경은 컨트롤러를 이용해 런타임에 유기적으로 진행될수도 있습니다.
-
-<br />
-
 ```java
 public class Runner {
     public static void main(String[] args) {
@@ -126,6 +118,10 @@ public class Runner {
 ```
 
 <br />
+
+처음 `Connector` 객체를 생성할 때 `Oracle`을 주입받아 생성했고, 이후 커넥터를 `MySQL`로 변경했습니다.
+
+그리고 이러한 변경은 전략 패턴을 적용함으로서 이렇게 쉽게 끝날 수 있습니다.
 
 결과는 다음과 같습니다.
 
