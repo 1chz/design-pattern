@@ -36,7 +36,7 @@
 
 저는 이번에도 역시 DB 구현체를 이용해 예제를 작성했습니다.
 
-클라이언트가 오라클을 사용하다가 갑자기 MySQL을 사용하고 싶다고 한다면, 전략 클래스만 갈아끼워 유연하게 변경할 수 있을겁니다.***(실제 이런 경우는 없습니다 😅)***
+클라이언트가 오라클을 사용하다가 갑자기 MySQL을 사용하고 싶다고 한다면, 전략 클래스만 갈아끼워 유연하게 변경할 수 있을겁니다.***(실제 이런 경우는 아마도 없습니다 😅)***
 
 <br />
 
@@ -46,27 +46,21 @@
 
 ```java
 public interface DBConnector {
-
     void connect();
-
 }
 
 public final class MySQLConnector implements DBConnector {
-
     @Override
     public void connect() {
-        System.out.println("connect MySQL");
+        System.out.println("connect to MySQL");
     }
-
 }
 
 public final class OracleConnector implements DBConnector {
-
     @Override
     public void connect() {
-        System.out.println("connect Oracle");
+        System.out.println("connect to Oracle");
     }
-
 }
 ```
 
@@ -77,13 +71,13 @@ public final class OracleConnector implements DBConnector {
 <br />
 
 ```java
-public enum DBType {
+public enum Databases {
     MYSQL(() -> new MySQLConnector()),
     ORACLE(() -> new OracleConnector());
 
     private final Supplier<DBConnector> supplier;
 
-    DBType(final Supplier<DBConnector> supplier) {
+    Databases(Supplier<DBConnector> supplier) {
         this.supplier = supplier;
     }
 
@@ -92,27 +86,20 @@ public enum DBType {
     }
 }
 
-public class Client {
+public class Connector {
+    private final DBConnector dbConnector;
 
-    private DBConnector dbConnector;
-
-    private Client(final DBConnector dbConnector) {
+    private Connector(DBConnector dbConnector) {
         this.dbConnector = dbConnector;
     }
 
-    public static Client from(final DBConnector dbConnector) {
-        return new Client(dbConnector);
+    public static Connector from(Databases databases) {
+        return new Client(databases.createConnector());
     }
 
     public void connect() {
         dbConnector.connect();
     }
-
-    public void changeDBConnector(final DBConnector dbConnector) {
-        Objects.requireNonNull(dbConnector, "DBConnector must not ne null !");
-        this.dbConnector = dbConnector;
-    }
-
 }
 ```
 
@@ -128,16 +115,13 @@ public class Client {
 
 ```java
 public class ConsoleRunner {
-
     public static void main(String[] args) {
-        Client client = Client.from(ORACLE.createConnector());
-        client.connect();
-
-        // 전략패턴으로 정책 변경
-        client.changeDBConnector(MYSQL.createConnector());
-        client.connect();
+        Connector mysql = Client.from(Databases.MYSQL);
+        mysql.connect();
+        
+        Connector oracle = Client.from(Databases.ORACLE);
+        oracle.connect();
     }
-
 }
 ```
 
@@ -148,8 +132,8 @@ public class ConsoleRunner {
 <br />
 
 ```shell
-connect Oracle
-connect MySQL
+connect to Oracle
+connect to MySQL
 ```
 
 <br />
