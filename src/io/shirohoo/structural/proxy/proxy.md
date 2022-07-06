@@ -117,8 +117,8 @@ public class ProxyOperator implements Operator {
 ```java
 public class ConsoleRunner {
     public static void main(String[] args) {
-        Client client = new Client(new ProxyOperator());
-        client.callOperation();
+        Client connector = new Client(new ProxyOperator());
+        connector.callOperation();
     }
 }
 ```
