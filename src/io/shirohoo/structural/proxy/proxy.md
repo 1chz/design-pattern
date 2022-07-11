@@ -344,9 +344,9 @@ public class LazyTextFileReader implements TextFileReader {
     @Override
     public SecretText read() {
         if (reader == null) {
+            System.out.println("lazy initialisation");
             reader = new RealTextFileReader(plainText);
         }
-        System.out.println("lazy initialisation");
         return reader.read();
     }
 }
